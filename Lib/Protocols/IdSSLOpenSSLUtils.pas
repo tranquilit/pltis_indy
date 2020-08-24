@@ -112,6 +112,7 @@ uses
   IdResourceStrings,
   IdResourceStringsCore,
   IdResourceStringsProtocols,
+  IdResourceStringsOpenSSL,
   IdThreadSafe,
   SyncObjs,
   SysUtils;
@@ -727,7 +728,7 @@ begin
         We could have used RawToBytes() but that would have made a copy of the
         output buffer.
         }
-        AOut.Text := TIdTextEncoding.UTF8.GetString( TIdBytes(LBufPtr^), 0, LLen);
+        AOut.Text := IndyTextEncoding_OSDefault.GetString( TIdBytes(LBufPtr^), 0, LLen);
       end;
     finally
       if Assigned(LMem) then begin
